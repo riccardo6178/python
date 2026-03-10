@@ -1,0 +1,19 @@
+map
+filter
+reduce
+
+
+
+Metodo	Descrizione	Esempio
+append()	Aggiunge un elemento alla fine	lista.append(4)
+extend()	Aggiunge tutti gli elementi di un iterabile	lista.extend([4,5,6])
+insert()	Inserisce un elemento in una posizione specifica	lista.insert(2, "ciao")
+remove()	Rimuove il primo elemento con quel valore	lista.remove(3)
+pop()	Rimuove e restituisce un elemento (ultimo di default)	x = lista.pop()
+clear()	Rimuove tutti gli elementi	lista.clear()
+index()	Restituisce l'indice del primo elemento con quel valore	i = lista.index(5)
+count()	Conta quante volte appare un elemento	n = lista.count(2)
+sort()	Ordina la lista in-place	lista.sort()
+reverse()	Inverte l'ordine della lista	lista.reverse()
+copy()	Restituisce una copia superficiale della lista	lista2 = lista.copy()
+
