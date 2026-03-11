@@ -1,0 +1,61 @@
+Utilizza il software in oggetti contenenti dati e comportamenti
+
+Favorisce modularità e manutenzione del codice e gli oggetti vengono racchiusi nelle classi.
+
+CLASSE=
+	entità rapprestnata all'interno del nostro codice 
+	Una classe contiene attributi e metodi dove gli attributi sono le variabili e i metodi sono funzioni
+
+Un oggetto è una istanza di una classe:
+	ESEMPIO:
+	Ho una classe quadrato con una istanza di quadrato (chiamata oggetto) con perimetri=5
+	
+Io potrei volere che una ttributo della mia classe non viene modificato a caso
+Voglio che ilo mio attributo venga modificato solo secondo un meccanismo 
+Gli attributi possono essere:
+	pubblici
+	privati
+				
+
+	protected
+		Una classe può avere delle sottoclassi figlie. L'attributo protected fa si che la classe padre e le ereditarie possono accedeere a quell'elemento
+
+Glia ttributi vengono definiti nella funzione __init__
+ESEMPIO:
+class Persona
+	def __init__(self, nome, età)
+		self.nome=nome
+		self.età=eta
+	
+	def saluta(self):
+		return f"Ciao sono {self.nome} e ho {self.anni}"
+
+p=Persona("Luca", 30)
+print(p.saluta())
+
+la funzione def __init__ si chiama costruttore 
+
+class PersonOgi metodo della classe deve prendere self come parametro
+self è un riferimento alla funzione stessa, come un puntatore 
+
+
+Nelle classi puoi avere attributi di classe o attributi di istanza
+Gli attributi di calsse sono condivise tra tutte le istanze delle classi 
+	Equivalente keyword static 
+
+class Rettangolo
+	def __init__(self, larghezza, altezza):
+		self.larghezza=larghezza:wq
+
+		self.altezza=altezza 
+	
+	def area(self):
+		return self.larghezza() * self.larghezza()
+
+
+Le classi hanno metodi speciali:
+	__str__
+	__repr__
+
+Queste due funzioni permettono alla classe di essere convertite in stringhe
+
