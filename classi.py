@@ -21,6 +21,9 @@ class Libro:
 def mostra_libri():
     with open(file_path, "r", encoding='UTF-8') as file_libreria:
         righe = file_libreria.readlines()
+        if not righe:
+            print("Il file e' vuoto, aggiungere un nuovo libro")
+            menu()
         for riga in enumerate(righe, start=1):
             print(f"{riga}", end='\n')
             
@@ -85,7 +88,7 @@ def menu():
             rimuovi_libro()
         elif scelta == "0":
             print("Uscita dal programma")
-            break
+            exit()
         else:
             print("Opzione non valida\n")
 

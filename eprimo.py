@@ -1,14 +1,9 @@
 def eprimo():
-    n=int(input("inserisci un numero e verrà decretato se è primo: "))
-          
-    for i in range(2, n):
-        if x % i == 0:
-         return False
-    return True
-
-    if eprimo(n):
-          print("Il numero è primo!")
-    else:      
-        print("Il numero non è primo")
+    print("inserisci un numero e verrà decretato se è primo: ")
+    n=int(input())
+    if n % 2 == 0:
+        print("Il numero e' dispari")
+    else:
+        print("Il numero e' pari")
 
 eprimo()
