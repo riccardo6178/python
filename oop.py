@@ -1,6 +1,6 @@
 class Cerchio:
-        def __init__(self, r):
-            self.raggio=r
+        def __init__(self, raggio):
+            self.raggio=raggio
 
         def area(self):
             return self.raggio*self.raggio*3.14
