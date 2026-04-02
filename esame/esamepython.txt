@@ -1,0 +1,84 @@
+   
+ISTRUZIONI GENERALI
+• Ogni esercizio deve essere implementato in linguaggio Python versione 3 su questo
+foglio, che dovrà essere riconsegnato al termine dell’esame.
+• Il codice, ove richiesto, deve essere leggibile, commentato ove necessario, e robusto
+rispetto agli input.
+• Non è consentito l’uso di materiale esterno, di sistemi di intelligenza artificiale, né di
+dispositivi elettronici se non la documentazione esclusivamente se fornita.
+Esercizio Unico [Punti: / 10]
+Si scriva un programma Python che carichi dei dati in formato CSV da un file inventario.csv.
+Caricato il file, generare una lista di oggetti della classe P rodotto, così descritta:
+Prodotto
+• Abbia gli attributi privati: codice, nome, categoria, prezzo, quantita
+• Il costruttore preveda la generazione automatica di un codice nel formato P R − 00001
+se non ne viene fornito uno
+• Si fornisca un metodo per caricare scorte: aumentare la quantità di n unità, con n > 0;
+in caso contrario stampare "Quantità non valida"
+• Si fornisca un metodo per vendere un prodotto: decrementare la quantità di n unità; se
+la quantità disponibile è insufficiente stampare "Quantità insufficiente"
+• Si fornisca un metodo per calcolare il valore totale del magazzino
+• Usi i metodi __str__ e __repr__ descritti a seguire
+1 def __str__ ( self ) :
+2 return ( f"[{ self . __codice }] { self . __nome } -
+{ self . __categoria }\n"
+3 f" Prezzo : { self . __prezzo :.2f} EUR | Quantita :
+{ self . __quantita }")
+4
+5 def __repr__ ( self ) :
+6 return self . __str__ ()
+
+Esame di Programmazione 1 - 30/03/2026 - A Durata: 2h | 2 di 3
+Dopo aver caricato il file, implementare un menù con le seguenti opzioni:
+• Inserisci prodotto (con quantità iniziale)
+• Carica scorte
+• Vendi prodotto
+• Stampa singolo prodotto
+• Stampa tutti i prodotti
+• Stampa valore totale magazzino
+• Rimuovi prodotto
+• Salva inventario su file
+• Esci
+Ipotizzando che il file csv iniziale contenga i seguenti dati:
+1 Codice , Nome , Categoria , Prezzo , Quantita
+2 PR -00001 , Penna Bic , Cancelleria ,1.50 ,100
+3 PR -00002 , Quaderno A4 , Cancelleria ,3.20 ,50
+4 PR -00003 , Matita HB , Cancelleria ,0.80 ,200
+5 PR -00004 , Evidenziatore , Cancelleria ,2.10 ,75
+ed inserendo manualmente i seguenti prodotti:
+1 Tastiera USB , Elettronica , 29.99 , 30
+2 Mouse Wireless , Elettronica , 19.99 , 45
+3 Monitor 24 pollici , Elettronica , 189.99 , 12
+Ed eseguendo le seguenti operazioni:
+• Carica 50 scorte di PR-00001
+• Vendi 20 unità di PR-00003
+• Rimuovi il prodotto PR-00004
+Il risultato atteso per la stampa dell’intero inventario è il seguente:
+1 [ PR -00001] Penna Bic - Cancelleria
+2 Prezzo : 1.50 EUR | Quantita : 150
+3
+4 [ PR -00002] Quaderno A4 - Cancelleria
+5 Prezzo : 3.20 EUR | Quantita : 50
+6
+7 [ PR -00003] Matita HB - Cancelleria
+8 Prezzo : 0.80 EUR | Quantita : 180
+9
+10 [ PR -00005] Tastiera USB - Elettronica
+11 Prezzo : 29.99 EUR | Quantita : 30
+12
+13 [ PR -00006] Mouse Wireless - Elettronica
+14 Prezzo : 19.99 EUR | Quantita : 45
+
+Esame di Programmazione 1 - 30/03/2026 - A Durata: 2h | 3 di 3
+
+15
+16 [ PR -00007] Monitor 24 pollici - Elettronica
+17 Prezzo : 189.99 EUR | Quantita : 12
+Il file salvato dovrà contenere:
+1 Codice , Nome , Categoria , Prezzo , Quantita
+2 PR -00001 , Penna Bic , Cancelleria ,1.5 ,150
+3 PR -00002 , Quaderno A4 , Cancelleria ,3.2 ,50
+4 PR -00003 , Matita HB , Cancelleria ,0.8 ,180
+5 PR -00005 , Tastiera USB , Elettronica ,29.99 ,30
+6 PR -00006 , Mouse Wireless , Elettronica ,19.99 ,45
+7 PR -00007 , Monitor 24 pollici , Elettronica ,189.99 ,12
