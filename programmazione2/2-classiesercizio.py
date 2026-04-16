@@ -1,4 +1,4 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 class Persona():
     def __init__(self, nome, eta):
         self.__nome=nome
@@ -46,6 +46,9 @@ class Insegnante(Persona):
     def __init__(self, nome, eta):
         super().__init__(nome, eta)
         self.classi=[]
+    
+    def presentati(self): 
+        return f'Nome: {self.nome} | Classi: {",".join(self.classi)}'
 
 
 p1 = Persona('Riccardo R', 21)
