@@ -1,27 +1,28 @@
 from abc import ABC, abstractmethod
-class Persona(ABC):
+class Persona():
     def __init__(self, nome, eta):
-        self.nome=nome
-        self._eta=eta
+        self.__nome=nome
+        self.__eta=eta
     
+
+    @property 
+    def nome(self):
+        return self.__nome
 
     @property
     def eta(self):          
-        return self._eta
+        return self.__eta
+    
     @eta.setter             
     def eta(self, value):
-        self._eta = value
-
-    def __str__(self):
-        return f'{self.nome} | {self._eta}'
+        self.__eta = value
     
     @abstractmethod
     def presentati(self):
         pass
 
-  
-
-
+    def __str__(self):
+        return f'{self.__nome} | {self.__eta}'
 
 class Studente(Persona):
     def __init__(self, nome, eta):
@@ -34,7 +35,7 @@ class Studente(Persona):
 
 
      
-    def __str__(self):
+    def presentati(self):
         return f'{self.nome} | {self.eta} | {self.corsi}'   
 
     def set_corso(self, corso):
@@ -52,7 +53,7 @@ print(p1)
 s1 = Studente('Riccardo R', 21)
 s1.set_corso('Matematica')
 print(s1)
-s1.mostra_corsi()
+s1.presentati()
 
 i1=Insegnante('Marco Aurelio', 40)
 print(i1)
