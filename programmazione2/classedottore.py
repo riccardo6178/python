@@ -32,6 +32,35 @@ class Dottore(Persona):
         for paziente in self.pazienti:
             print(paziente)
 
+class GestioneStudio:
+    def __init__(self):
+        self.dottori: list[Dottore] = []
+        self.pazienti: list[Paziente] = []
+    
+    def crea_dottore(self, nome, cognome, età, specializzazione, stipendio):
+        dottore=Dottore(nome, cognome,età, specializzazione, stipendio)
+        self.dottori.append(dottore)
+        return dottore
+
+    def aggiungi_dottore(self, dottore):
+        self.dottori.append(dottore)
+        
+    def mostra_dottori(self):
+        for d in self.dottori:
+            print(f'Dottore: {d}')
+    
+    def crea_paziente(self, nome, cognome, età, gruppo_sanguigno):
+        paziente=Paziente(nome, cognome, età, gruppo_sanguigno)
+        self.pazienti.append(paziente)
+        return paziente
+        
+    def aggiungi_paziente(self, paziente):
+        self.pazienti.append(paziente)
+    
+    def msotra_pazienti(self):
+        for i, p in enummerate(self.pazienti):
+            print(f'{i}){p}')
+
 
 class Paziente(Persona):
     def __init__(self, nome, cognome, età, gruppo_sanguigno):
@@ -53,23 +82,36 @@ class Paziente(Persona):
         return f'{self.nome} {self.cognome} | Età: {self.età} | {self.patologie}'
 
 
+def menu():
+    while True:
+        print(('-'*10) + 'MENU' + ('-'*10))
+        print('1) Visualizza pazienti')
+        print('2)Visualizzza dottori')
+        print('3) Aggiungi dottore')
+        print('4) Aggiungi paziente ')
+        print('5) Menu patologie')
+        print('0)Esci')
+        scelta=int(input('Scegli cosa fare: '))
+        if scelta==1:
+            GestioneStudio.msotra_pazienti()
+        if scelta==2:
+            gestione=GestioneStudio()
+            gestione.mostra_dottori()
+        if scelta==3:
+            gestione=GestioneStudio()
+            print('Insreisci il nome del dottore: ')
+            nome=input()
+            print("Insreisci il cognome del dottore: ")
+            cognome=input()
+            print("Inserisci l'età del dottore: ")
+            età=int(input())
+            print('Inserisci la specializzazione del dottore: ')
+            specializzazione=input()
+            print('Insreisci lo stipendio del dottore: ')
+            stipendio=int(input())
+            gestione.crea_dottore(nome, cognome, età, specializzazione, stipendio)
 
-paziente1=Paziente('Mario', 'Mudò', 20, 'A')
-paziente2=Paziente('Prova', 'Prova', 13, 'A')
-
-dottore1=Dottore('Riccardo', 'Rizzo', 30, 'Neurologo', 10000)
-dottore2=Dottore('Marco', 'Saccone', 28, 'Ginecologo', 10000)
+        
 
 
-dottore1.aggiungi_paziente(paziente1)
-
-dottore2.aggiungi_paziente(paziente2)
-
-paziente1.aggiungi_patologia('Coviddi')
-paziente1.aggiungi_patologia('Coviddi')
-
-print('Paziente dottore 1:')
-dottore1.mostra_pazienti()
-
-paziente1.rimuovi_patologia('Coviddi')
-print(str(paziente1))
+menu()
