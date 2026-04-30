@@ -3,7 +3,7 @@ class Stack:
         self.__history = []
 
     def pop_stack(self):
-        if self.__history.is_empty:
+        if self.__history==[]:
             print(f'La lista è vuota')
         else:
             return self.__history.pop()
