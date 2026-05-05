@@ -93,7 +93,7 @@ class CircularLinkedList:
         self.__size -= 1
         return valore
     def remove(self, valore):
-        """Rimuove il nodo contenente il valore specificato."""
+       
         if self.isEmpty():
             raise IndexError("lista vuota")
         if self.__testa.valore == valore:
@@ -118,6 +118,7 @@ class CircularLinkedList:
         if self.isEmpty():
             raise IndexError("lista vuota")
         return self.__coda.valore
+
     def traverse(self, passi):
         if self.isEmpty():
             raise IndexError("lista vuota")
@@ -125,6 +126,7 @@ class CircularLinkedList:
         for i in range(passi):
             print(f"  Passo {i + 1}: {corrente.valore}")
             corrente = corrente.next
+    
     def isEmpty(self):
         return self.__testa is None
     def size(self):
@@ -172,3 +174,4 @@ print("\n9. Simulazione 6 turni (senza bob):")
 turni.traverse(6)
 
 print(f"\n10. Analisti nel team: {turni.size()}")
+
