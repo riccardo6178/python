@@ -8,6 +8,8 @@ class Coda:
     def enqueue(self, utente):
         self.__queue.append(utente)
     
+    def enqueue_more(self, *utenti):
+        self.__queue.extend(utenti)
 
     def dequeue(self):
         self.__queue.popleft()
