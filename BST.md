@@ -1,0 +1,1 @@
+Bianry search trree: un albero dove tutti i valori a sinistra sono inferiori al padre mentre a destra i nodi sono maggiori 

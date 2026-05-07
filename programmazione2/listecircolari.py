@@ -7,7 +7,7 @@ class CircularLinkedList:
         self.__testa = None
         self.__coda  = None
         self.__size  = 0
-    # -- INSERIMENTO --
+   
     def insertFirst(self, valore):
         nuovo = NodoC(valore)
         if self.isEmpty():
