@@ -1,0 +1,24 @@
+albero = BST()
+number_list=[]
+for i in range (60):
+    numero=(random.randint(1, 1000))
+    number_list.append(numero)
+    print(numero)
+
+
+target = number_list[59]
+print(f"Numeri generati:{len(number_list)}")
+print(f"Target da cercare:{target}")
+
+start_list = time.perf_counter()
+
+time_list = time.perf_counter() - start_list
+
+start_bts = time.perf_counter()
+albero.search(target)
+time_bst= time.perf_counter() - start_bts
+
+print(f"Tempo lista: {time_list:.6f} s")
+print(f"Tempo BTS: {time_bst:.6f} s")
+print(f"BST {time_list/time_bst:.1f}x piu veloce")
+

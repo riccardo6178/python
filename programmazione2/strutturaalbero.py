@@ -14,9 +14,9 @@ class BST:
     def __init__(self):
         self.__radice=None
 
-    def insert(self):
-        if self.radice is None:
-            self.radice=Nodo(valore)
+    def insert(self, valore):
+        if self.__radice is None:
+            self.__radice=Nodo(valore)
         else:
             self.__insertRicorsivo(self.__radice, valore)
         
@@ -28,7 +28,7 @@ class BST:
                 self.__insertRicorsivo(nodo.left, valore)
         else:
             if nodo.right is None:
-                
+
                 nodo.right = Nodo(valore)
             else:
                 self.__insertRicorsivo(nodo.right, valore)
@@ -44,6 +44,9 @@ class BST:
             return True
         
         if valore < nodo.valore:
+            return self.__searchRicorsivo(nodo.left, valore)
+        
+        if valore > nodo.valore:
             return self.__searchRicorsivo(nodo.right, valore)
         
     
@@ -55,10 +58,10 @@ class BST:
     def __inOrderRicorsivo(self, nodo, elementi):
         if nodo is None:
             return
-        self.__inOrderRicorsivo(nodo, left, elementi)
-        elementi.append(nodo, valore)
-
         self.__inOrderRicorsivo(nodo.left, elementi)
+        elementi.append(nodo.valore)
+
+        self.__inOrderRicorsivo(nodo.right, elementi)
 
     def isEmpty(self):
         return self.__radice is None
@@ -66,28 +69,4 @@ class BST:
     def __repr__(self):
         return f'BST(inOrder={self.inOrder()})'
 
-
-albero = BST()
-number_list=[]
-for i in range (60):
-    numero=(random.randint(1, 1000))
-    number_list.append(numero)
-    print(numero)
-
-
-target = number_list[59]
-print(f"Numeri generati:{len(number_list)}")
-print(f"Target da cercare:{target}")
-
-start_list = time.perf_counter()
-
-time_list = time.perf_counter() - start_list
-
-start_bts = time.perf_counter()
-albero.search(target)
-time_bst= time.perf_counter() - start_bts
-
-print(f"Tempo lista: {time_list:.6f} s")
-print(f"Tempo BTS: {time_bst:.6f} s")
-print(f"BST {time_list/time_bst:.1f}x piu veloce")
 

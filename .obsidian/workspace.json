@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "Funzioni ricorsive"
             }
+          },
+          {
+            "id": "3eaf6461689bdeaf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Struttura ad albero.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Struttura ad albero"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -109,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Funzioni ricorsive.md",
+                "file": "Struttura ad albero.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Funzioni ricorsive"
+              "title": "Backlinks for Struttura ad albero"
             }
           },
           {
@@ -128,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Funzioni ricorsive.md",
+                "file": "Struttura ad albero.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Funzioni ricorsive"
+              "title": "Outgoing links from Struttura ad albero"
             }
           },
           {
@@ -171,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Funzioni ricorsive.md",
+                "file": "Struttura ad albero.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Funzioni ricorsive"
+              "title": "Outline of Struttura ad albero"
             }
           }
         ]
@@ -198,9 +212,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "b814560b83509d09",
+  "active": "3eaf6461689bdeaf",
   "lastOpenFiles": [
-    "BST.md",
-    "Funzioni ricorsive.md"
+    "programmazione2/primoesercizioalbero.py",
+    "programmazione2/primoesercizioalbero.txt",
+    "programmazione2/__pycache__/strutturaalbero.cpython-314.pyc",
+    "programmazione2/__pycache__",
+    "programmazione2/router.py",
+    "Funzioni ricorsive.md",
+    "Struttura ad albero.md",
+    "BST.md"
   ]
 }
