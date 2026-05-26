@@ -9,12 +9,13 @@ def main():
     s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     s.bind(addr)
+    print(f'Server listening in : {addr}')
     s.listen(5)
     conn, remoteaddr = s.accept()
     print(f'Connessione ricevuta da:{remoteaddr}')
     
 
-    print(f'Server listening in : {addr}')
+   
     try:
         
         while True:
@@ -22,7 +23,6 @@ def main():
             if not data:
                 print('Client disconnected')
             print(data.decode())
-            
         
     except KeyboardInterrupt:
         print('Uscendo dal server')
